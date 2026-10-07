@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutielook Digicam - Backend</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/img/logo.jpg">
+    <meta name="theme-color" content="#E2578F">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- App Config -->
+    <script src="./js/config.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-kanit overflow-hidden">
+    
+    <!-- Login Screen -->
+    <div id="login-screen" class="fixed inset-0 z-50 bg-gray-50 flex items-center justify-center hidden">
+        <div class="card w-full max-w-sm mx-4 p-8 shadow-xl mt-20">
+            <svg class="bow" viewBox="0 0 64 40" aria-hidden="true"><path d="M32 20C22 4 4 2 3 14c-1 12 17 12 29 6zM32 20c10-16 28-18 29-6 1 12-17 12-29 6z" fill="#F7A4C4" stroke="#E2578F" stroke-width="2" stroke-linejoin="round"/><circle cx="32" cy="20" r="6" fill="#E2578F"/><path d="M28 25 22 38M36 25l6 13" stroke="#E2578F" stroke-width="3" stroke-linecap="round"/></svg>
+            <div class="text-center mb-6">
+                <img src="./assets/img/logo.jpg" alt="Cutielook Rental" class="logo-ring login-logo">
+                <h2 class="text-2xl font-bold">เข้าสู่ระบบ</h2>
+                <p class="text-gray-500 text-sm mt-1">Cutielook Digicam Backend 🎀</p>
+            </div>
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label class="lb">อีเมล</label>
+                    <input type="email" id="login-email" required class="inp bg-gray-50" placeholder="admin@example.com">
+                </div>
+                <div>
+                    <label class="lb">รหัสผ่าน</label>
+                    <input type="password" id="login-password" required class="inp bg-gray-50" placeholder="••••••••">
+                </div>
+                <div id="login-error" class="text-rose-500 text-sm hidden bg-rose-50 p-2 rounded-lg text-center"></div>
+                <button type="submit" id="login-btn" class="btn w-full !py-3 !mt-6 shadow-md shadow-pink-200">เข้าสู่ระบบ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Wrapper -->
+    <div id="app-wrapper" class="flex h-screen w-full hidden">
+        
+        <!-- Sidebar / Navbar Container -->
+        <div id="navbar-container" class="z-20 shrink-0"></div>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col h-screen overflow-y-auto w-full relative">
+            
+            <!-- Header (Mobile Topbar / Desktop Header) -->
+            <header class="bg-white border-b sticky top-0 z-10 flex items-center justify-between px-4 h-16 shrink-0 lg:px-8">
+                <div class="flex items-center gap-3 lg:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand p-2 rounded-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <img src="./assets/img/logo.jpg" alt="" class="logo-ring w-8 h-8">
+                    <h1 class="text-lg font-bold text-brand">Cutielook</h1>
+                </div>
+                
+                <div class="hidden lg:block">
+                    <h2 id="page-title" class="text-xl font-bold">Dashboard</h2>
+                </div>
+                
+                <div class="flex items-center gap-4 ml-auto">
+                    <div class="text-sm text-gray-600">Admin</div>
+                    <button class="w-8 h-8 rounded-full bg-brand-light text-brand flex items-center justify-center font-bold">🐰</button>
+                </div>
+            </header>
+
+            <!-- Dynamic Page Content -->
+            <div id="app-content" class="p-4 lg:p-8 flex-1 max-w-7xl mx-auto w-full">
+                <!-- Content loaded via JS -->
+            </div>
+        </main>
+
+        <!-- Overlay for mobile sidebar -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-10 hidden lg:hidden"></div>
+
+    </div>
+
+    <!-- Application Logic -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

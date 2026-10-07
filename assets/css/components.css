@@ -1,0 +1,86 @@
+/* Reusable UI Components */
+
+.inp {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    background: #fff;
+    font-family: 'Kanit', sans-serif;
+    transition: all 0.2s;
+}
+
+.inp:focus {
+    outline: 2px solid #E2578F;
+    border-color: transparent;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+    background: #E2578F;
+    transition: background-color 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover:not(:disabled) {
+    background: #C93E78;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* สีปุ่มต่างๆ */
+.btn.btn-green, .btn-green {
+    background: #10b981 !important;
+    color: #fff !important;
+}
+.btn.btn-green:hover:not(:disabled), .btn-green:hover:not(:disabled) {
+    background: #059669 !important;
+}
+
+.btn.btn-red, .btn-red {
+    background: #f43f5e !important;
+    color: #fff !important;
+}
+.btn.btn-red:hover:not(:disabled), .btn-red:hover:not(:disabled) {
+    background: #e11d48 !important;
+}
+
+.btn.btn-gray, .btn-gray {
+    background: #e5e7eb !important;
+    color: #374151 !important;
+}
+.btn.btn-gray:hover:not(:disabled), .btn-gray:hover:not(:disabled) {
+    background: #d1d5db !important;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Label */
+.lb {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.35rem;
+}
